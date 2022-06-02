@@ -1,4 +1,3 @@
-// note, memoisation is necessary for this problem to be solved quickly.
 let primeFactorMemo = new System.Collections.Generic.Dictionary<int, int list>()
 
 let primeFactors x =
