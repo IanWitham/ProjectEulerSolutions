@@ -30,3 +30,4 @@ Seq.unfold generator { Year = 1900; Month = 0; DayNo = 1 }
 |> Seq.takeWhile (beforeYear 2001)
 |> Seq.filter isSunday
 |> Seq.length
+|> printfn "%d"

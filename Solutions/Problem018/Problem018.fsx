@@ -26,10 +26,5 @@ let rowReducer i j =
     |> Array.map (fun (ie, (pel, per)) -> ie + max pel per)
 
 Array.reduceBack rowReducer rows
-
-// The trick... work from the bottom to the top.
-// For each element in row n - 1 , add to it the greater
-// of the two diagonally adjacent elements in row n. Row n-1 is now
-// updated to reflect a these running maximal totals.
-// Now do the same for row n - 2 and the running totals in row n - 1.
-// Continue doing this until you have one value left in row zero.
+|> Seq.head
+|> printfn "%d"

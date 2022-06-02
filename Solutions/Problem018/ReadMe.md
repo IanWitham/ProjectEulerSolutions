@@ -21,3 +21,16 @@
 63 66 04 68 89 53 67 30 73 16 69 87 40 31<br />
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23</p>
 <p class="note"><b>NOTE:</b> As there are only 16384 routes, it is possible to solve this problem by trying every route. However, <a href="problem=67">Problem 67</a>, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)</p>
+
+My Notes
+---
+
+The trick... work from the bottom to the top.
+For each element in row n - 1 , add to it the greater
+of the two diagonally adjacent elements in row n.
+
+Row n-1 is now
+updated to reflect a these running maximal totals.
+
+Now do the same for row n - 2 and the running totals in row n - 1.
+Continue doing this until you have one value left in row zero.

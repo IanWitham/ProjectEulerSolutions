@@ -1,4 +1,5 @@
-let input = """73167176531330624919225119674426574742355349194934
+let input =
+    """73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
 12540698747158523863050715693290963295227443043557
@@ -19,21 +20,24 @@ let input = """73167176531330624919225119674426574742355349194934
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450"""
 
-let (|Int|_|) (str:string) =
+let (|Int|_|) (str: string) =
     match System.Int32.TryParse str with
-    | true,int -> Some int
+    | true, int -> Some int
     | _ -> None
 
-let (|Int64|_|) (str:string) =
+let (|Int64|_|) (str: string) =
     match System.Int64.TryParse str with
-    | true,int -> Some int
-    | _ -> None    
+    | true, int -> Some int
+    | _ -> None
 
 input
 |> seq
 |> Seq.map string
-|> Seq.choose (fun x -> match x with | Int64 n -> Some(n) | _ -> None )
+|> Seq.choose (fun x ->
+    match x with
+    | Int64 n -> Some(n)
+    | _ -> None)
 |> Seq.windowed 13
 |> Seq.map (Array.reduce (*))
 |> Seq.max
-
+|> printf "%A"

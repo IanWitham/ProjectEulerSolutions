@@ -15,3 +15,4 @@ let square n = n * n
 pascalsTriangleRows
 |> Seq.item 19 // the 20th row of Pascal's triangle
 |> Seq.sumBy (int64 >> square)
+|> printfn "%d"

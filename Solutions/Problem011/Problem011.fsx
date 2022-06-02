@@ -50,4 +50,4 @@ allValidCoordQuaples
     Seq.fold (fun p c -> p * gridValue c) 1
     )
 |> Seq.max
-
+|> printfn "%d"

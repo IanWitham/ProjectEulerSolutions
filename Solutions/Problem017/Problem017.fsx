@@ -37,3 +37,4 @@ let rec toWords i =
 
 { 1..1000 }
 |> Seq.sumBy (toWords >> String.length)
+|> printfn "%d"

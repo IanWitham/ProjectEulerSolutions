@@ -65,3 +65,4 @@ let IsTheSumOfTwoAbundantNumbers n =
 { 1..28123 }
 |> Seq.filter (IsTheSumOfTwoAbundantNumbers >> not)
 |> Seq.sum
+|> printfn "%d"

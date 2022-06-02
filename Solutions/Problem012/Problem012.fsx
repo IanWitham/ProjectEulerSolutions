@@ -41,3 +41,4 @@ triangleNumbers ()
 |> Seq.skip 1
 // |> tap (printfn "%d")
 |> Seq.find (fun x -> numberOfDivisors x > 500)
+|> printfn "%d"

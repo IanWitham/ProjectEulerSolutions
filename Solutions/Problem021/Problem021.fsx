@@ -49,3 +49,4 @@ let isAmicableNumber x =
 { 1..9999 }
 |> Seq.filter isAmicableNumber
 |> Seq.sum
+|> printfn "%d"

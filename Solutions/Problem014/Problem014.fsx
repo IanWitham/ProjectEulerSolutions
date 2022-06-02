@@ -20,3 +20,4 @@ let collatzLength (n: int64) =
 { 1..999_999 }
 |> Seq.map (int64)
 |> Seq.maxBy collatzLength
+|> printfn "%d"
