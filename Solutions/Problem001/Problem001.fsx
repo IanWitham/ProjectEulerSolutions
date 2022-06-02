@@ -1,9 +1,6 @@
-let multipleOf x y = y % x = 0
-
 let result =
-    seq {1..999}
-    |> Seq.filter (fun x -> multipleOf 3 x || multipleOf 5 x)
+    seq { 1..999 }
+    |> Seq.filter (fun x -> x % 3 = 0 || x % 5 = 0)
     |> Seq.sum
 
 printfn "%d" result
-
